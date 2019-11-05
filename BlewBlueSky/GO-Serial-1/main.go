@@ -31,7 +31,7 @@ func main(){
 	if err != nil {
 		log.Fatalf("port.Write: %v", err)
 	}	
-	fmt.Println("Wrote", n, "bytes.")
+	fmt.Printf("Wrote %v bytes:%q\n",n,b[:n])
 
 	//
 	buf := make([]byte, 128)
@@ -39,5 +39,5 @@ func main(){
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Printf("%q:%v\n", buf[:n],n)
+	log.Printf("Read %v bytes:%q\n",n,buf[:n])
 }
